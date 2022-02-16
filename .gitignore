@@ -1,0 +1,15 @@
+.idea
+
+# -------------------
+# FRONT-END (REACT)
+# -------------------
+/client/.env
+/client/node_modules
+
+
+# -------------------
+# BACK-END
+# -------------------
+/server/node_modules
+/server/.env
+/server/uploads
