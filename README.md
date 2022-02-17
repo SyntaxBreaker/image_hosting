@@ -17,8 +17,7 @@
 #### Back-end
 - NodeJS
 - Express
-- Mongoose
-- Multer
+- MongoDB
 
 
 ## Setup
