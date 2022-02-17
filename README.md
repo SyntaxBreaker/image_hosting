@@ -30,7 +30,7 @@
 `npm start`
 
 #### Setup and start front-end
-`Move to client folder`
+`Move to client folder, then edit env.example file, change the name of env.example file to .env`
 
 `npm install`
 
