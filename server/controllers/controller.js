@@ -41,7 +41,6 @@ const getImages = (req, res) => {
 
 module.exports = {
     uploadImage,
-    getImage,
     getImageInfo,
     getImages,
 }
