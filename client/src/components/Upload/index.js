@@ -99,7 +99,7 @@ function Upload() {
             body: formData
         })
             .then(response => response.json())
-            .then(res => navigate(`/${res.image}`));
+            .then(res => navigate(`/${res.id}`));
     }
 
     return (

@@ -13,3 +13,4 @@
 /server/node_modules
 /server/.env
 /server/uploads
+/server/serviceAccountKey.json

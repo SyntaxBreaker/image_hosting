@@ -2,8 +2,9 @@ const express = require('express');
 const controller = require('../controllers/controller');
 const multer = require('multer');
 
+const storage = multer.memoryStorage();
 const upload = multer({
-    dest: 'uploads/'
+    storage: storage
 });
 
 const router = express.Router();

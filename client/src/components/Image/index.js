@@ -58,10 +58,7 @@ function Image() {
                 const response = await axios.get(`${process.env.REACT_APP_API}/getImageInfo${pathname}`);
                 const imageInfo = response.data[0];
                 if(imageInfo) {
-                    await axios.get(`${process.env.REACT_APP_API}/image/${imageInfo.image}`)
-                        .then(res => {
-                            setImage({id: imageInfo.image, image: res.request.responseURL, title: imageInfo.title, description: imageInfo.description});
-                        })
+                    setImage({id: imageInfo.id, image: imageInfo.image, title: imageInfo.title, description: imageInfo.description});
                 }
             } catch(error) {
                 console.error(error);
@@ -78,7 +75,7 @@ function Image() {
             </Helmet>
             {image ?
             <ImageContainer>
-                <Img src={image.image} />
+                <Img src={`data:image/png;base64, ${image.image}`} />
                 <ImageInformation>
                     <Title>{image.title}</Title>
                     <Description>{image.description}</Description>

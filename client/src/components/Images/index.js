@@ -76,11 +76,7 @@ function Images() {
         async function getImages() {
             try {
                 const response = await axios.get(`${process.env.REACT_APP_API}`);
-                response.data.forEach(image => axios.get(`${process.env.REACT_APP_API}/image/${image.image}`)
-                    .then(res => {
-                            setImages(prevState => [...prevState, {id: image.image, image: res.request.responseURL, title: image.title, description: image.description}])
-                        }
-                    ))
+                response.data.forEach(image => setImages(prevState => [...prevState, {id: image.id, image: image.image, title: image.title, description: image.description}]));
             } catch (error) {
                 console.error(error);
             }
@@ -101,7 +97,7 @@ function Images() {
                         return (
                             <StyledLink to={`${i.id}`} key={i.id}>
                                 <ImageWrapper>
-                                    <Img src={i.image} />
+                                    <Img src={`data:image/png;base64, ${i.image}`} />
                                     <ImageInformation>
                                         <Title>{i.title}</Title>
                                         <Description>{i.description}</Description>
