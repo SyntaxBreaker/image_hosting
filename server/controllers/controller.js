@@ -17,13 +17,6 @@ const uploadImage = async (req, res) => {
     });
 }
 
-const getImage = (req, res) => {
-    const id = req.params.id;
-    Image.find({id}).then(doc => {
-        res.send(doc.image);
-    })
-}
-
 const getImageInfo = (req, res) => {
     const id = req.params.id;
     Image.find({id}).then(doc => {

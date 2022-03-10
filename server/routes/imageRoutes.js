@@ -10,7 +10,6 @@ const upload = multer({
 const router = express.Router();
 
 router.get('/', controller.getImages);
-router.get('/image/:id', controller.getImage);
 router.get('/getImageInfo/:id', controller.getImageInfo);
 router.post('/', upload.single('image'), controller.uploadImage);
 
