@@ -15,6 +15,24 @@ const ImageContainer = styled.div`
   }
 `;
 
+const Loader = styled.div`
+  margin: 2rem auto;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #17322F;
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+`
+
 const ImageInformation = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,16 +68,19 @@ const ErrorMessage = styled.h2`
 function Image() {
     const {pathname} = useLocation();
     const [image, setImage] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
 
         async function getImage() {
             try {
+                setIsLoading(true);
                 const response = await axios.get(`${process.env.REACT_APP_API}/getImageInfo${pathname}`);
                 const imageInfo = response.data[0];
                 if(imageInfo) {
                     setImage({id: imageInfo.id, image: imageInfo.image, title: imageInfo.title, description: imageInfo.description});
                 }
+                setIsLoading(false);
             } catch(error) {
                 console.error(error);
             }
@@ -73,7 +94,7 @@ function Image() {
             <Helmet>
                 <title>{image ? image.title : 'Image not found'}</title>
             </Helmet>
-            {image ?
+            {isLoading ? <Loader /> : image ?
             <ImageContainer>
                 <Img src={`data:image/png;base64, ${image.image}`} />
                 <ImageInformation>
