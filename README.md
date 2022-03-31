@@ -37,4 +37,4 @@
 
 
 ## Contact
-Created by [@MetaneRuS](https://github.com/MetaneRuS) - feel free to contact me!
+Created by [@xMetaneRx](https://github.com/xMetaneRx) - feel free to contact me!
