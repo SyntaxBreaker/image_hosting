@@ -1,6 +1,5 @@
 # Image-hosting
-> A simple image hosting that allows you to share images with other people
-
+> A no-frills image hosting that allows you to share images with other people
 
 ## Table of Contents
 * [Technologies Used](#technologies-used)
@@ -22,14 +21,14 @@
 
 ## Setup
 #### Setup and start back-end
-`Move to server folder, then edit env.example file, change the name of env.example file to .env`
+`Move to the server folder, then edit the env.example file, and change the name of the env.example file to the .env`
 
 `npm install`
 
 `npm start`
 
 #### Setup and start front-end
-`Move to client folder, then edit env.example file, change the name of env.example file to .env`
+`Move to the client folder, then edit the env.example file, and change the name of the env.example file to the .env`
 
 `npm install`
 
