@@ -35,5 +35,5 @@
 `npm start`
 
 
-## Contact
-Created by [@xMetaneRx](https://github.com/xMetaneRx) - feel free to contact me!
+## Author
+Created by [@SyntaxBreaker](https://github.com/SyntaxBreaker)
